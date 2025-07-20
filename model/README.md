@@ -1,11 +1,3 @@
-My apologies for the confusion. My previous response provided the content as a single, complete block of raw Markdown text. That raw text is the source code for a Markdown file.
-
-When that text is saved in a file (for example, `README.md`) and viewed on a platform that renders Markdown (like GitHub), it will appear as a formatted document.
-
-Here is that same content rendered directly for you to see the final formatted result:
-
------
-
 # DPA-3 Environment Setup and Model Usage
 
 This document outlines the steps to set up the `deepmd-kit` environment and use the DPA-3 models. This guide is based on `deepmd-kit-3.1.0`.
