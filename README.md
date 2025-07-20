@@ -91,4 +91,4 @@ calc = DP_XTB(model="DPA-3-DF@DFT.pt", device='cuda')
 ```
 
 
-"Please note: The relevant model files will be released here after our paper is formally accepted by the journal."
+"Please note: The relevant model files will be released here after our paper is formally accepted."
