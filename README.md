@@ -97,6 +97,3 @@ calc = DP_xTB(model="DPA-3-DF.pt", device='cuda')
 ```
 
 For the DeePHF-level models, use `DPA-3-F@DeePHF.pt` or `DPA-3-DF@DeePHF.pt`. If selecting the DeePHF head explicitly, use `head="CC"`.
-
-
-"Please note: The relevant model files will be released here after our paper is formally accepted."
