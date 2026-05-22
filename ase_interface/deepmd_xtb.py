@@ -25,7 +25,7 @@ if TYPE_CHECKING:
         Atoms,
     )
 from xtb.ase.calculator import XTB
-__all__ = ["DP"]
+__all__ = ["DP_xTB"]
 
 
 class DP_xTB(Calculator):
@@ -130,4 +130,3 @@ class DP_xTB(Calculator):
         self.results["free_energy"] = e[0][0] + xtb_e
         self.results["forces"] = f[0] + xtb_f
         self.xtb.reset()
-

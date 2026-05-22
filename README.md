@@ -51,9 +51,15 @@ For detailed installation instructions, please refer to the official `deepmd-kit
 
 ### 2\. Model Usage
 
-There are two DPA-3 models available under the DFT tag: `DPA-3-F@DFT.pt` and `DPA-3-DF@DFT.pt`.
+The released model files use the following names:
 
-#### 2.1. DPA-3-F@DFT.pt (Directly Trained Model)
+- `DPA-3-F.pt`: directly trained DFT-level model
+- `DPA-3-DF.pt`: DFT-level $\\Delta$-learning model
+- `DPA-3-F@DeePHF.pt`: directly trained DeePHF-level model
+- `DPA-3-DF@DeePHF.pt`: DeePHF-level $\\Delta$-learning model
+- `DPA-3-pretrain.pt`: pretrained model
+
+#### 2.1. DPA-3-F.pt (Directly Trained Model)
 
 This model is trained directly and can be used in Python through the ASE interface.
 
@@ -62,7 +68,7 @@ from deepmd.pt.utils.ase_calc import DPCalculator
 from ase.io import read
 
 # Initialize the calculator
-calc = DPCalculator(model="DPA-3-F@DFT.pt", device='cuda')
+calc = DPCalculator(model="DPA-3-F.pt", device='cuda')
 
 # The remaining steps are consistent with other ASE calculators
 data = read('test.xyz')
@@ -73,7 +79,7 @@ energy = data.get_potential_energy()
 forces = data.get_forces()
 ```
 
-#### 2.2. DPA-3-DF@DFT.pt ($\\Delta$-Learning Model)
+#### 2.2. DPA-3-DF.pt ($\\Delta$-Learning Model)
 
 This is a $\\Delta$-Learning model, and its use requires combination with GFN2-xTB calculations. To use it with the ASE interface in Python, a helper script (`deepmd_xtb.py`) is needed.
 
@@ -84,11 +90,13 @@ import sys
 # This example assumes the script is in '/home/xxx/ase_interface'.
 sys.path.append('/home/xxx/ase_interface')
 
-from deepmd_xtb import DP_XTB
+from deepmd_xtb import DP_xTB
 
 # Initialize the calculator
-calc = DP_XTB(model="DPA-3-DF@DFT.pt", device='cuda')
+calc = DP_xTB(model="DPA-3-DF.pt", device='cuda')
 ```
+
+For the DeePHF-level models, use `DPA-3-F@DeePHF.pt` or `DPA-3-DF@DeePHF.pt`. If selecting the DeePHF head explicitly, use `head="CC"`.
 
 
 "Please note: The relevant model files will be released here after our paper is formally accepted."
